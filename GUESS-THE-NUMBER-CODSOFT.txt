@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cstdlib>   
+#include <ctime>     
+
+int main() {
+    std::srand(std::time(0));
+    int secret = std::rand() % 100;
+    int userguess;
+
+    std::cout << "THE GUESS NUMBER GAME!!!\n";
+    std::cout << "RULE-1:ENTER THE NUMBER BETWEEN 1 TO 100.\n";
+
+    while (true) {
+        std::cout << "Enter your guess: ";
+        std::cin >> userguess;
+        
+        if (userguess < secret) {
+            std::cout << "Too low!try again :(\n";
+        } else if (userguess > secret) {
+            std::cout << "Too high!try again :(\n";
+        } else {
+            std::cout << "Correct answer,Congratulations! :).\n";
+            break;
+        }
+    }
+
+    return 0;
+}
